@@ -1,13 +1,281 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Works on Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: gray #c5c5c5;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Works on Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+	width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #c5c5c5;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: gray;
+	border-radius: 20px;
+	border: 3px solid gray;
+}
+
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.rounded-50 {
+	border-radius: 50%;
+}
+
+.rounded-20px {
+	border-radius: 20px;
+}
+
+.flex {
+	display: flex;
+}
+
+.grid {
+	display: grid;
+}
+
+.flex-center {
+	align-items: center;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+input {
+	outline: none;
+}
+
+.icon {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 30px;
+	width: 30px;
+	height: 30px;
+}
+
+.icon-md {
+	background-size: 25px;
+	height: 25px;
+	width: 25px;
+}
+
+.icon-sm {
+	background-size: 18px;
+	height: 18px;
+	width: 18px;
+}
+
+.rounded-50 {
+	border-radius: 50%;
+}
+
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.icon-p-15 {
+	padding: 15px;
+}
+
+/* Wide extra small icon */
+.icon-w-xsm {
+	background-size: 22px;
+	width: 22px;
+	height: 16px;
+}
+
+.icon-xsm {
+	background-size: 15px;
+	height: 15px;
+	width: 15px;
+}
+
+/* Icons used in login and forgot password, might need to be globalized properly */
+
+.icon-eye {
+	background-image: url("../public/images/icons/eye2.svg");
+}
+
+.icon-eye-slash {
+	background-image: url("../public/images/icons/eye-slash.svg");
+	width: 22px;
+	height: 16px;
+}
+
+.icon-search {
+	background-image: url("../public/images/icons/search-icon.svg");
+}
+
+.icon-eye-hollow {
+	background-image: url("../public/images/icons/eye.svg");
+}
+
+.icon-trash {
+	background-image: url("../public/images/icons/trash-2.svg");
+}
+
+.icon-trash-big {
+	background-image: url("../public/images/icons/trash.svg");
+	background-size: 20px 17px;
+	height: 20px;
+	width: 17px;
+}
+
+.icon-edit {
+	background-image: url("../public/images/icons/edit-3.svg");
+}
+
+.icon-clock {
+	background-image: url("../public/images/icons/clock.svg");
+}
+
+.icon-cash {
+	background-image: url("../public/images/icons/cash.svg");
+}
+
+.icon-dots {
+	background-image: url("../public/images/icons/dots.svg");
+}
+
+.icon-ex {
+	background-image: url("../public/images/icons/x-icon.svg");
+}
+
+.btn {
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: 600;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.btn-small {
+	width: 200px;
+	height: 40px;
+}
+
+.btn-small-w {
+	width: 240px;
+	height: 40px;
+}
+
+.btn-blue {
+	background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+	color: #fff;
+}
+
+.btn-blue:hover {
+	background: linear-gradient(180deg, #3372ed 0%, #0f2ea1 100%);
+}
+
+.btn-blue:active {
+	background: #0f2ea1;
+}
+
+.btn-blue-hollow {
+	background-color: #fff;
+	color: #1138c2;
+	border: 1px solid #1138c2;
+}
+
+.btn-blue-hollow:hover {
+	color: #001769;
+	border: 1px solid #001769;
+	box-shadow: 0 0 10px 2px rgb(223, 215, 215);
+}
+
+.btn-blue-hollow:active {
+	color: #001769;
+	border: 1px solid #0d1f61;
+}
+
+.bold-14 {
+	font-weight: 700;
+}
+
+.modal {
+	position: fixed;
+	z-index: 6;
+	display: none;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%);
+	padding: 30px;
+	justify-content: center;
+	align-self: center;
+	background-color: #fff;
+}
+
+.modal.active {
+	display: flex;
+}
+
+/* ============================================ */
+/* ============== MEDIA QUERIES =============== */
+/* ============================================ */
+
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 992px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 680px) {
+}
+
+@media only screen and (max-width: 576px) {
+}
+
+@media only screen and (max-width: 480px) {
+}
+
+@media only screen and (max-width: 400px) {
+}
+
+@media only screen and (max-width: 320px) {
 }
