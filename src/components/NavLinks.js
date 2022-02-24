@@ -3,9 +3,13 @@ import { NavLink } from "react-router-dom";
 
 const NavLinks = () => {
 	return (
-		<div>
-			<NavLink to="/users">Users</NavLink>
-		</div>
+		<nav className="nav">
+			<ul className="grid">
+				<li className="aside-item flex">
+					<NavLink to="/users">Users</NavLink>
+				</li>
+			</ul>
+		</nav>
 	);
 };
 
