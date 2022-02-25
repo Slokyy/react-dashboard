@@ -179,6 +179,105 @@ input {
 	background-image: url("../public/images/icons/x-icon.svg");
 }
 
+/* SIDEBAR */
+
+.sidebar {
+	width: 200px;
+	height: 100vh;
+	background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+	box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 0px 0px 20px 0px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	padding-top: 40px;
+}
+
+.sidebar-logo {
+	display: block;
+	margin: 0 auto;
+
+	width: 100px;
+	height: 59px;
+	margin-bottom: 65px;
+}
+
+.hamburger {
+	display: none;
+}
+
+.bar {
+	display: block;
+	width: 30px;
+	height: 3px;
+	margin: 3px auto;
+	-webkit-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	background-color: #fff;
+}
+
+.active .bar1 {
+	--webkit-transform: rotate(-45deg) translate(-6px, 7px);
+	transform: rotate(-45deg) translate(-6px, 7px);
+}
+
+.active .bar2 {
+	opacity: 0;
+}
+
+.active .bar3 {
+	--webkit-transform: rotate(45deg) translate(-9px, -5px);
+	transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar .aside-item {
+	align-items: center;
+	padding: 0;
+	height: 40px;
+	margin: 3px 0;
+}
+
+.sidebar .aside-item:hover::before,
+.sidebar .aside-item .nav-link.active::before {
+	content: "";
+	position: absolute;
+	width: 5px;
+	height: 40px;
+	background: #ffffff;
+	border-radius: 0px 5px 5px 0px;
+}
+
+.sidebar .aside-item .nav-link.active::before {
+	left: 0;
+}
+
+.sidebar .aside-item:hover {
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.sidebar .aside-item .nav-link {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-left: 60px;
+	line-height: 40px;
+}
+
+ul li {
+	list-style: none;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+
 .btn {
 	border-radius: 4px;
 	font-size: 16px;

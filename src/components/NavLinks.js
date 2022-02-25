@@ -5,8 +5,25 @@ const NavLinks = () => {
 	return (
 		<nav className="nav">
 			<ul className="grid">
-				<li className="aside-item flex">
-					<NavLink to="/users">Users</NavLink>
+				<li className="aside-item">
+					<NavLink to="/users" className="nav-link">
+						Users
+					</NavLink>
+				</li>
+				<li className="aside-item">
+					<NavLink to="/developers" className="nav-link">
+						Developers
+					</NavLink>
+				</li>
+				<li className="aside-item">
+					<NavLink to="/clients" className="nav-link">
+						Clients
+					</NavLink>
+				</li>
+				<li className="aside-item">
+					<NavLink to="/my-profile" className="nav-link">
+						Profile
+					</NavLink>
 				</li>
 			</ul>
 		</nav>
