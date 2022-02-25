@@ -43,6 +43,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	position: relative;
+	overflow-x: hidden;
 }
 
 h2 {
@@ -346,6 +347,10 @@ ul li a {
 
 .modal.active {
 	display: flex;
+}
+
+.container.grid {
+	grid-template-columns: auto 1fr;
 }
 
 /* ============================================ */

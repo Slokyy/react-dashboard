@@ -1,13 +1,7 @@
 import React from "react";
-import SideBar from "../../components/SideBar";
 
 const Clients = () => {
-	return (
-		<>
-			<SideBar />
-			<div>Clients</div>
-		</>
-	);
+	return <div>Clients</div>;
 };
 
 export default Clients;
