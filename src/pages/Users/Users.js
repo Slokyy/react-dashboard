@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalState } from "../context";
+import Table from "../../components/Table/Table";
+import SearchHeader from "../../components/Table/SearchHeader";
+import AddUser from "../../components/Sliders/AddUser";
 
 const url = "http://localhost:8000/users";
 
 const Users = () => {
-	const [users, setUsers] = useState();
-	const [isLoading, setIsLoading] = useState(true);
+  // const [users, setUsers] = useState();
+  // const [isLoading, setIsLoading] = useState(true);
 
-	// const [isLoading, setIsLoading] = useState(true);
+  const { data, setData, isLoading, setIsLoading, fetchUsers } =
+    useGlobalState();
 
-	const { fetchUsers } = useGlobalState();
+  useEffect(() => {
+    fetchUsers(url);
+  }, []);
 
-	useEffect(() => {
-		fetchUsers(url, setUsers, setIsLoading);
-	}, []);
-
-	return (
-		<>
-			{isLoading && <div>Loading....</div>}
-			{!users && !isLoading && <div>Prazna tabela.....</div>}
-			{users && (
-				<ul>
-					{users.map((user) => {
-						return <li key={user.id}>{user.first_name}</li>;
-					})}
-				</ul>
-			)}
-		</>
-	);
+  return (
+    <section className="section">
+      <SearchHeader />
+      {isLoading && <div>Loading....</div>}
+      {!data && !isLoading && <div>Prazna tabela.....</div>}
+      {data && <Table />}
+      {data && <AddUser />}
+    </section>
+  );
 };
 
 export default Users;

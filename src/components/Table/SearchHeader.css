@@ -1,0 +1,26 @@
+.table-header {
+  padding: 30px 60px;
+  justify-content: space-between;
+}
+
+.search-group {
+  gap: 20px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s ease-in;
+}
+
+.search-group:focus-within,
+.search-group:active {
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.search-group input[type="text"] {
+  border: none;
+}
+
+.search-group input[type="text"],
+.search-group input[type="text"]::placeholder {
+  font-size: 16px;
+  color: #bababa;
+}

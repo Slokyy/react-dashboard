@@ -1,0 +1,89 @@
+.table-section {
+  height: 83.3vh;
+  overflow: auto;
+  border-top: 1px solid #bababa;
+}
+
+.table {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.sticky {
+  position: sticky;
+  top: -2px;
+  width: 100%;
+  z-index: 2;
+}
+
+.big-table th {
+  position: static;
+  background-color: #fff;
+}
+
+.big-table th,
+.big-table td {
+  max-height: 100px;
+  height: 100px;
+  border: 0.4px solid #c5c5c5;
+  text-align: left;
+  word-wrap: break-word;
+  background-clip: padding-box;
+}
+
+.big-table tr th:first-of-type,
+.big-table tr td:first-of-type {
+  border-left: none;
+  width: 0.1%;
+  white-space: nowrap;
+  padding: 10px 60px;
+}
+
+.big-table tr th:last-of-type,
+.big-table tr td:last-of-type {
+  border-right: none;
+}
+
+.big-table th:not(th:first-of-type),
+.big-table td:not(td:first-of-type) {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.big-table td:first-of-type .table-avatar-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.big-table td:first-of-type a {
+  display: inline-block;
+  width: 80px;
+}
+
+.big-table th {
+  min-height: 100px;
+  border-top: none;
+}
+
+.big-table td img {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  width: 80px;
+  height: 80px;
+}
+
+.table-icon-group {
+  gap: 25px;
+}
+
+.table-icon-group a {
+  display: flex;
+  align-items: center;
+}
