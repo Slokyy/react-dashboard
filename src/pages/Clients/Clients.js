@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useGlobalState } from "../context";
 
 const Clients = () => {
-	return <div>Clients</div>;
+	const { pathname, handleLocationPath } = useGlobalState();
+
+	useEffect(() => {
+		handleLocationPath();
+	}, []);
+	return <div>Clients {pathname}</div>;
 };
 
 export default Clients;

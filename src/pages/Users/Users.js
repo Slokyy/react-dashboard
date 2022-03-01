@@ -7,25 +7,42 @@ import AddUser from "../../components/Sliders/AddUser";
 const url = "http://localhost:8000/users";
 
 const Users = () => {
-  // const [users, setUsers] = useState();
-  // const [isLoading, setIsLoading] = useState(true);
+	const [searchQuery, setSearchQuery] = useState("");
+	const {
+		data,
+		setData,
+		isLoading,
+		setIsLoading,
+		fetchUsers,
+		handleLocationPath,
+	} = useGlobalState();
 
-  const { data, setData, isLoading, setIsLoading, fetchUsers } =
-    useGlobalState();
+	const keys = ["first_name", "last_name", "email"];
 
-  useEffect(() => {
-    fetchUsers(url);
-  }, []);
+	useEffect(() => {
+		handleLocationPath();
+		fetchUsers(url);
+	}, []);
 
-  return (
-    <section className="section">
-      <SearchHeader />
-      {isLoading && <div>Loading....</div>}
-      {!data && !isLoading && <div>Prazna tabela.....</div>}
-      {data && <Table />}
-      {data && <AddUser />}
-    </section>
-  );
+	useEffect(() => {
+		console.log(searchQuery);
+	}, [searchQuery]);
+
+	const search = (data) => {
+		return data.filter((item) => {
+			return keys.some((key) => item[key].toLowerCase().includes(searchQuery));
+		});
+	};
+
+	return (
+		<section className="section">
+			<SearchHeader searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+			{isLoading && <div>Loading....</div>}
+			{!data && !isLoading && <div>Prazna tabela.....</div>}
+			{data && <Table searchQuery={searchQuery} data={search(data)} />}
+			{data && <AddUser />}
+		</section>
+	);
 };
 
 export default Users;

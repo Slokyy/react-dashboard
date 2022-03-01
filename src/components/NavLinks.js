@@ -22,7 +22,7 @@ const NavLinks = () => {
 				</li>
 				<li className="aside-item">
 					<NavLink to="/my-profile" className="nav-link">
-						Profile
+						My Profile
 					</NavLink>
 				</li>
 			</ul>

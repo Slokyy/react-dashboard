@@ -349,7 +349,7 @@ ul li a {
 	display: flex;
 }
 
-.container.grid {
+.main-container-wrapper.grid {
 	grid-template-columns: auto 1fr;
 }
 
