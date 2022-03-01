@@ -15,7 +15,9 @@
       "password": "secret",
       "role": "Designer",
       "status": "Active",
-      "tekuci_racun": "5108752629866969"
+      "tekuci_racun": "5108752629866969",
+      "ptt": "24000",
+      "phone": "0654215234"
     },
     {
       "id": 2,
@@ -32,7 +34,9 @@
       "password": "secret",
       "role": "Research Nurse",
       "status": "Active",
-      "tekuci_racun": "5108756529025907"
+      "tekuci_racun": "5108756529025907",
+      "ptt": "24000",
+      "phone": "0625741256"
     },
     {
       "id": 3,
@@ -49,7 +53,9 @@
       "password": "secret",
       "role": "Help Desk Technician",
       "status": "Active",
-      "tekuci_racun": "5108757565033268"
+      "tekuci_racun": "5108757565033268",
+      "ptt": "24000",
+      "phone": "0657452369"
     },
     {
       "id": 4,
@@ -66,7 +72,9 @@
       "password": "secret",
       "role": "Geologist III",
       "status": "Active",
-      "tekuci_racun": "5108750688051739"
+      "tekuci_racun": "5108750688051739",
+      "ptt": "24000",
+      "phone": "0623254152"
     },
     {
       "id": 5,
@@ -83,7 +91,9 @@
       "password": "secret",
       "role": "Human Resources Assistant II",
       "status": "Active",
-      "tekuci_racun": "5108751762224531"
+      "tekuci_racun": "5108751762224531",
+      "ptt": "24000",
+      "phone": "0637854124"
     },
     {
       "id": 6,
@@ -100,7 +110,9 @@
       "password": "secret",
       "role": "Design Engineer",
       "status": "Active",
-      "tekuci_racun": "5108753849393685"
+      "tekuci_racun": "5108753849393685",
+      "ptt": "24000",
+      "phone": "0698562145"
     },
     {
       "id": 7,
@@ -117,7 +129,9 @@
       "password": "secret",
       "role": "Senior Developer",
       "status": "Active",
-      "tekuci_racun": "5108758353829982"
+      "tekuci_racun": "5108758353829982",
+      "ptt": "24000",
+      "phone": "0612458965"
     },
     {
       "id": 8,
@@ -134,7 +148,9 @@
       "password": "secret",
       "role": "Graphic Designer",
       "status": "Active",
-      "tekuci_racun": "5108758144087056"
+      "tekuci_racun": "5108758144087056",
+      "ptt": "24000",
+      "phone": "0614589652"
     },
     {
       "id": 9,
@@ -151,7 +167,9 @@
       "password": "secret",
       "role": "Executive Secretary",
       "status": "Active",
-      "tekuci_racun": "5108754249086143"
+      "tekuci_racun": "5108754249086143",
+      "ptt": "24000",
+      "phone": "0639856741"
     },
     {
       "id": 10,
@@ -168,7 +186,9 @@
       "password": "secret",
       "role": "Mechanical Systems Engineer",
       "status": "Active",
-      "tekuci_racun": "5108750786034991"
+      "tekuci_racun": "5108750786034991",
+      "ptt": "24000",
+      "phone": "064589230"
     },
     {
       "id": 11,
@@ -185,7 +205,9 @@
       "password": "secret",
       "role": "Senior Sales Associate",
       "status": "Active",
-      "tekuci_racun": "5108750005607619"
+      "tekuci_racun": "5108750005607619",
+      "ptt": "24000",
+      "phone": "0691295635"
     },
     {
       "id": 12,
@@ -202,7 +224,9 @@
       "password": "secret",
       "role": "Programmer IV",
       "status": "Active",
-      "tekuci_racun": "5108753113861805"
+      "tekuci_racun": "5108753113861805",
+      "ptt": "24000",
+      "phone": "063527485"
     },
     {
       "id": 13,
@@ -219,7 +243,9 @@
       "password": "secret",
       "role": "Staff Scientist",
       "status": "Active",
-      "tekuci_racun": "5108752252553850"
+      "tekuci_racun": "5108752252553850",
+      "ptt": "24000",
+      "phone": "060254785"
     },
     {
       "id": 14,
@@ -236,7 +262,9 @@
       "password": "secret",
       "role": "Cost Accountant",
       "status": "Active",
-      "tekuci_racun": "5108755585675118"
+      "tekuci_racun": "5108755585675118",
+      "ptt": "24000",
+      "phone": "0603698521"
     },
     {
       "id": 15,
@@ -253,7 +281,9 @@
       "password": "secret",
       "role": "Administrative Officer",
       "status": "Active",
-      "tekuci_racun": "5108755170473804"
+      "tekuci_racun": "5108755170473804",
+      "ptt": "24000",
+      "phone": "0658592741"
     },
     {
       "id": 16,
@@ -270,7 +300,9 @@
       "password": "secret",
       "role": "Nurse Practicioner",
       "status": "Active",
-      "tekuci_racun": "5108755927602291"
+      "tekuci_racun": "5108755927602291",
+      "ptt": "24000",
+      "phone": "065237856"
     }
   ],
   "clients": [
@@ -280,6 +312,8 @@
       "avatar": "https://media.istockphoto.com/photos/smart-home-symbol-picture-id1314037715?k=20&m=1314037715&s=612x612&w=0&h=hDYBWJEgIP66xyqwKPw9UbHLg6g1WhcKENjLgRQbs1s=",
       "email": "unify@test.com",
       "manager": "Mirko Vrknic",
+      "developers": "Lorem",
+      "billing": "Lorem Ipsum",
       "manager-factor": "1",
       "paymentMethod": "PayPal"
     },
@@ -289,6 +323,8 @@
       "avatar": "https://media.istockphoto.com/photos/one-like-social-media-notification-with-thumb-up-icon-picture-id1200899039?k=20&m=1200899039&s=612x612&w=0&h=RScG0RGONTAuYLeoREVl9c6xtTsOlJAbcUjZ9y2Z244=",
       "email": "likeManager@test.com",
       "manager": "Jelisaveta Milovic",
+      "developers": "Lorem",
+      "billing": "Lorem Ipsum",
       "manager-factor": "0.75",
       "paymentMethod": "Stemi"
     },
@@ -298,6 +334,8 @@
       "avatar": "https://images.unsplash.com/photo-1567446537708-ac4aa75c9c28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
       "email": "unify@test.com",
       "manager": "Mirko Vrknic",
+      "developers": "Lorem",
+      "billing": "Lorem Ipsum",
       "manager-factor": "1",
       "paymentMethod": "PayPal"
     },
@@ -307,6 +345,8 @@
       "avatar": "https://images.unsplash.com/photo-1602934445884-da0fa1c9d3b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=958&q=80",
       "email": "unify@test.com",
       "manager": "Jelisaveta Milovic",
+      "developers": "Lorem",
+      "billing": "Lorem Ipsum",
       "manager-factor": "1",
       "paymentMethod": "PayPal"
     },
@@ -316,7 +356,9 @@
       "avatar": "https://images.unsplash.com/photo-1516876437184-593fda40c7ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
       "email": "unify@test.com",
       "manager": "Jelena Ivanovic",
-      "manager-factor": "0.5",
+      "developers": "Lorem",
+      "billing": "Lorem Ipsum",
+      "manager_factor": "0.5",
       "paymentMethod": "Cash"
     }
   ]
