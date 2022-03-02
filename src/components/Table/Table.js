@@ -3,6 +3,7 @@ import { useGlobalState } from "../../pages/context";
 import "./Table.css";
 
 const Table = ({ searchQuery, data }) => {
+	console.log(data);
 	// const { data, setData } = useGlobalState();
 	return (
 		<div className="table-section">

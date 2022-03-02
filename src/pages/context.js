@@ -6,6 +6,7 @@ const AppProvider = ({ children }) => {
 	const [data, setData] = useState();
 	const [addUserSlide, setAddUserSlide] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
+	const [refetch, setRefetch] = useState(false);
 	const fetchUsers = (url) => {
 		fetch(url, {
 			method: "GET",
@@ -56,6 +57,8 @@ const AppProvider = ({ children }) => {
 				fetchUsers,
 				addUserSlide,
 				setAddUserSlide,
+				refetch,
+				setRefetch,
 			}}
 		>
 			{children}

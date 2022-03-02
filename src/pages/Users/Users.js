@@ -7,6 +7,15 @@ import AddUser from "../../components/Sliders/AddUser";
 const url = "http://localhost:8000/users";
 
 const Users = () => {
+	/**
+	 * @TODO make edit user slider that grabs cliecked user data
+	 * and stores it inside inputs, on edit it find user by its id and
+	 * with put method edits user data
+	 * @TODO view user profile with data, data needs to be sent to the profile page of the user
+	 * exaple: localhost:3000/users/user_name or some other key
+	 * @TODO delete user data (easiest), remove data via passed through id with DELETE method
+	 * only add user function should be on this page, rest should be defined on users
+	 */
 	const [searchQuery, setSearchQuery] = useState("");
 	const {
 		data,

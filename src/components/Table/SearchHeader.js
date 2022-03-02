@@ -9,7 +9,7 @@ const SearchHeader = ({ searchQuery, setSearchQuery }) => {
 		useGlobalState();
 
 	useEffect(() => {
-		// setPath(handleLocationPath());
+		// setSearchQuery("");
 	}, []);
 
 	useEffect(() => {
@@ -27,7 +27,7 @@ const SearchHeader = ({ searchQuery, setSearchQuery }) => {
 					placeholder="Search"
 					id="table-search"
 					className="table-search"
-					onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
+					onKeyUp={(e) => setSearchQuery(e.target.value.toLowerCase())}
 				/>
 			</label>
 			{/* ==> Add User button */}
