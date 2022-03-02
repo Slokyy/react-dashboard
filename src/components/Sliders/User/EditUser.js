@@ -1,62 +1,43 @@
-import React, { useState } from "react";
-import { useGlobalState } from "../../pages/context";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useGlobalState } from "../../../pages/context";
+import { useUserState } from "../../../pages/Users/UserContext";
 import "./AddUser.css";
 
-const AddUser = () => {
-	const { addUserSlide, setAddUserSlide, refetch, setRefetch } =
-		useGlobalState();
-
-	const navigate = useNavigate();
-
-	// Input field data
-	const [avatar, setAvatar] = useState({
-		image_path: "some_path",
-		image_alt: "Some Image Alt",
-	});
-	const [first_name, setFirstName] = useState("");
-	const [last_name, setLastName] = useState("");
-	const [email, setEmail] = useState("");
-	const [phone, setPhone] = useState("");
-	const [street, setStreet] = useState("");
-	const [city, setCity] = useState("");
-	const [ptt, setPtt] = useState("");
-	const [country, setCountry] = useState("");
-	const [password, setPassword] = useState("");
-	const [status, setStatus] = useState("Active");
-	const [role, setRole] = useState("");
-	const [tekRacun, setTekRacun] = useState("");
+const EditUser = () => {
+	const [editData, setEditData] = useState([]);
 	const [isPosting, setIsPosting] = useState(false);
+	const { activeEditUserId, editUserSlide, setEditUserSlide } = useUserState();
 
-	/**
-	 * @TODO Make add user funcitonality with POST method
-	 * grab input field data and send it to localhost:8000/users
-	 * generate random id somehow, math random + date combo
-	 */
+	useEffect(() => {
+		fetch(`http://localhost:8000/users/${activeEditUserId}`)
+			.then((res) => res.json())
+			.then((data) => {
+				setEditData(data);
+				console.log(data);
+			})
+			.catch((err) => console.log("EditFetchErr: ", err));
+	}, [activeEditUserId]);
 
-	/**
-	 * Fetch users
-	 */
-	const handleAddUserSubmit = (e) => {
+	const handleEditUserSubmit = (e) => {
 		e.preventDefault();
-		const user = {
-			avatar,
-			first_name,
-			last_name,
-			email,
-			phone,
-			street,
-			city,
-			ptt,
-			country,
-			status,
-			password,
-			role,
-			tekuci_racun: tekRacun,
+		/* const user = {
+			// avatar,
+			// first_name,
+			// last_name,
+			// email,
+			// phone,
+			// street,
+			// city,
+			// ptt,
+			// country,
+			// status,
+			// password,
+			// role,
+			// tekuci_racun: tekRacun,
 		};
 
 		// console.log(user);
-		setIsPosting(true);
 		fetch("http://localhost:8000/users", {
 			method: "POST",
 			headers: {
@@ -70,25 +51,25 @@ const AddUser = () => {
 					console.log("Posted");
 					navigate("/");
 				}, 1000);
-			});
+			}); */
 	};
 	return (
 		<section
 			className={
-				addUserSlide
-					? "slide-container new-user-container active"
-					: "slide-container new-user-container"
+				editUserSlide
+					? "slide-container edit-user-container active"
+					: "slide-container edit-user-container"
 			}
-			id="new-user-container"
+			id="edit-user-container"
 		>
 			<span
 				className="icon icon-md icon-ex  js-btn-close slide-ex"
-				onClick={() => setAddUserSlide(!addUserSlide)}
+				onClick={() => setEditUserSlide(!editUserSlide)}
 			></span>
 			<form
 				action="#!"
 				className="slide-form flex"
-				onSubmit={handleAddUserSubmit}
+				onSubmit={handleEditUserSubmit}
 			>
 				<h2>New User</h2>
 
@@ -96,13 +77,18 @@ const AddUser = () => {
 					<label className="label-image shadow-me flex" htmlFor="add-user-img">
 						Add image
 					</label>
-					<input
+					<img
+						src={editData?.avatar?.image_path}
+						className="profile-picture"
+						alt="Loreta Ipsum"
+					></img>
+					{/* 					<input
 						type="file"
 						name="add-user-img"
 						className="add-user-img"
 						id="add-user-img"
 						hidden
-					/>
+					/> */}
 				</div>
 				<div className="form-group">
 					<input
@@ -110,8 +96,10 @@ const AddUser = () => {
 						id="user-name"
 						className="shadow-me input-text-gray"
 						name="user-name"
-						value={first_name}
-						onChange={(e) => setFirstName(e.target.value)}
+						value={editData?.first_name}
+						onChange={(e) =>
+							setEditData({ ...editData, first_name: e.target.value })
+						}
 						required
 					/>
 					<label htmlFor="user-email" className="label-name">
@@ -125,8 +113,10 @@ const AddUser = () => {
 						id="user-lname"
 						name="user-lname"
 						className="shadow-me input-text-gray"
-						value={last_name}
-						onChange={(e) => setLastName(e.target.value)}
+						value={editData?.last_name}
+						onChange={(e) =>
+							setEditData({ ...editData, last_name: e.target.value })
+						}
 						required
 					/>
 					<label htmlFor="user-lname" className="label-name">
@@ -140,8 +130,10 @@ const AddUser = () => {
 						id="user-email"
 						className="shadow-me input-text-gray"
 						name="user-email"
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
+						value={editData?.email}
+						onChange={(e) =>
+							setEditData({ ...editData, email: e.target.value })
+						}
 						required
 					/>
 					<label htmlFor="user-email" className="label-name">
@@ -155,8 +147,10 @@ const AddUser = () => {
 						id="user-phone"
 						className="shadow-me input-text-gray"
 						name="user-phone"
-						value={phone}
-						onChange={(e) => setPhone(e.target.value)}
+						value={editData?.phone}
+						onChange={(e) =>
+							setEditData({ ...editData, phone: e.target.value })
+						}
 						required
 					/>
 					<label htmlFor="user-phone" className="label-name">
@@ -170,8 +164,10 @@ const AddUser = () => {
 						id="user-street"
 						className="shadow-me input-text-gray"
 						name="user-street"
-						value={street}
-						onChange={(e) => setStreet(e.target.value)}
+						value={editData?.street}
+						onChange={(e) =>
+							setEditData({ ...editData, street: e.target.value })
+						}
 						required
 					/>
 					<label htmlFor="user-street" className="label-name">
@@ -185,8 +181,8 @@ const AddUser = () => {
 						id="user-city"
 						className="shadow-me input-text-gray"
 						name="user-city"
-						value={city}
-						onChange={(e) => setCity(e.target.value)}
+						value={editData?.city}
+						onChange={(e) => setEditData({ ...editData, city: e.target.value })}
 						required
 					/>
 					<label htmlFor="user-city" className="label-name">
@@ -200,8 +196,8 @@ const AddUser = () => {
 						id="user-ptt"
 						className="shadow-me input-text-gray"
 						name="user-ptt"
-						value={ptt}
-						onChange={(e) => setPtt(e.target.value)}
+						value={editData?.ptt}
+						onChange={(e) => setEditData({ ...editData, ptt: e.target.value })}
 						required
 					/>
 					<label htmlFor="user-ptt" className="label-name">
@@ -215,8 +211,10 @@ const AddUser = () => {
 						id="user-country"
 						className="shadow-me input-text-gray"
 						name="user-country"
-						value={country}
-						onChange={(e) => setCountry(e.target.value)}
+						value={editData?.country}
+						onChange={(e) =>
+							setEditData({ ...editData, country: e.target.value })
+						}
 						required
 					/>
 					<label htmlFor="user-country" className="label-name">
@@ -226,16 +224,18 @@ const AddUser = () => {
 
 				<div className="form-group">
 					<input
-						type="password"
-						id="user-password"
+						type="text"
+						id="user-status"
 						className="shadow-me input-text-gray"
-						name="user-password"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
+						name="user-status"
+						value={editData?.status}
+						onChange={(e) =>
+							setEditData({ ...editData, status: e.target.value })
+						}
 						required
 					/>
-					<label htmlFor="user-password" className="label-name">
-						<span className="content-name">Password:</span>
+					<label htmlFor="user-status" className="label-name">
+						<span className="content-name">Status:</span>
 					</label>
 				</div>
 
@@ -245,8 +245,8 @@ const AddUser = () => {
 						id="user-role"
 						className="shadow-me input-text-gray"
 						name="user-role"
-						value={role}
-						onChange={(e) => setRole(e.target.value)}
+						value={editData?.role}
+						onChange={(e) => setEditData({ ...editData, role: e.target.value })}
 						required
 					/>
 					<label htmlFor="user-role" className="label-name">
@@ -260,8 +260,10 @@ const AddUser = () => {
 						id="user-tekuci-rac"
 						className="shadow-me input-text-gray"
 						name="user-tekuci-rac"
-						value={tekRacun}
-						onChange={(e) => setTekRacun(e.target.value)}
+						value={editData?.tekuci_racun}
+						onChange={(e) =>
+							setEditData({ ...editData, tekuci_racun: e.target.value })
+						}
 						required
 					/>
 					<label htmlFor="user-tekuci-rac" className="label-name">
@@ -273,21 +275,21 @@ const AddUser = () => {
 					<input
 						type="button"
 						className="btn js-btn-close shadow-me"
-						onClick={() => setAddUserSlide(!addUserSlide)}
+						onClick={() => setEditUserSlide(!editUserSlide)}
 						value="Cancel"
 					/>
 					{!isPosting && (
 						<input
 							type="submit"
 							className="btn btn-small btn-blue shadow-me"
-							value="Add user"
+							value="Edit user"
 						/>
 					)}
 					{isPosting && (
 						<input
 							type="submit"
 							className="btn btn-small btn-blue shadow-me"
-							value="Posting user..."
+							value="Editing user..."
 						/>
 					)}
 				</div>
@@ -296,4 +298,4 @@ const AddUser = () => {
 	);
 };
 
-export default AddUser;
+export default EditUser;

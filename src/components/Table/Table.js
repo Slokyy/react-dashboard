@@ -1,10 +1,22 @@
 import React from "react";
 import { useGlobalState } from "../../pages/context";
+import { useUserState } from "../../pages/Users/UserContext";
 import "./Table.css";
 
 const Table = ({ searchQuery, data }) => {
-	console.log(data);
-	// const { data, setData } = useGlobalState();
+	const { refetch, setRefetch } = useGlobalState();
+	const {
+		activeEditUserId,
+		setActiveEditUserId,
+		editUserSlide,
+		setEditUserSlide,
+	} = useUserState();
+
+	const handleEditSlide = (id) => {
+		setActiveEditUserId(id);
+		setRefetch(!refetch);
+		setEditUserSlide(!editUserSlide);
+	};
 	return (
 		<div className="table-section">
 			{/* Table Section*/}
@@ -44,8 +56,11 @@ const Table = ({ searchQuery, data }) => {
 								<td>{user.email}</td>
 								<td>
 									<div className="table-icon-group flex">
-										<a href="#!">
-											<span className="icon icon-sm icon-edit edit-user-toggle"></span>
+										<a onClick={(e) => e.preventDefault()}>
+											<span
+												className="icon icon-sm icon-edit edit-user-toggle"
+												onClick={() => handleEditSlide(user.id)}
+											></span>
 										</a>
 										<a href="#!">
 											<span className="icon icon-sm icon-eye-hollow"></span>

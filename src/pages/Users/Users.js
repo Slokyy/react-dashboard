@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalState } from "../context";
+import { UserProvider } from "./UserContext";
 import Table from "../../components/Table/Table";
 import SearchHeader from "../../components/Table/SearchHeader";
-import AddUser from "../../components/Sliders/AddUser";
+import AddUser from "../../components/Sliders/User/AddUser";
+import Overlay from "../../components/Overlay";
+import EditUser from "../../components/Sliders/User/EditUser";
 
 const url = "http://localhost:8000/users";
 
@@ -17,6 +20,7 @@ const Users = () => {
 	 * only add user function should be on this page, rest should be defined on users
 	 */
 	const [searchQuery, setSearchQuery] = useState("");
+	const [activeEditId, setActiveEditId] = useState(0);
 	const {
 		data,
 		setData,
@@ -24,6 +28,8 @@ const Users = () => {
 		setIsLoading,
 		fetchUsers,
 		handleLocationPath,
+		addUserSlide,
+		setAddUserSlide,
 	} = useGlobalState();
 
 	const keys = ["first_name", "last_name", "email"];
@@ -44,13 +50,20 @@ const Users = () => {
 	};
 
 	return (
-		<section className="section">
-			<SearchHeader searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-			{isLoading && <div>Loading....</div>}
-			{!data && !isLoading && <div>Prazna tabela.....</div>}
-			{data && <Table searchQuery={searchQuery} data={search(data)} />}
-			{data && <AddUser />}
-		</section>
+		<UserProvider>
+			<section className="section">
+				<SearchHeader
+					searchQuery={searchQuery}
+					setSearchQuery={setSearchQuery}
+				/>
+				{isLoading && <div>Loading....</div>}
+				{!data && !isLoading && <div>Prazna tabela.....</div>}
+				{data && <Table searchQuery={searchQuery} data={search(data)} />}
+				{data && <AddUser />}
+				{data && <EditUser />}
+				{addUserSlide && <Overlay />}
+			</section>
+		</UserProvider>
 	);
 };
 

@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-	const [pathname, setPathname] = useState();
-	const [data, setData] = useState();
+	const [pathname, setPathname] = useState("");
+	const [data, setData] = useState([]);
 	const [addUserSlide, setAddUserSlide] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	const [refetch, setRefetch] = useState(false);

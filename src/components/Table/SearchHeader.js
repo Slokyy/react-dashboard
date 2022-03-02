@@ -12,9 +12,7 @@ const SearchHeader = ({ searchQuery, setSearchQuery }) => {
 		// setSearchQuery("");
 	}, []);
 
-	useEffect(() => {
-		console.log("I am user slide", addUserSlide);
-	}, [addUserSlide]);
+	useEffect(() => {}, [addUserSlide]);
 
 	return (
 		<div className="table-header table-section-header flex">
