@@ -3,6 +3,9 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
 	const [pathname, setPathname] = useState("");
+	const [isLogedIn, setIsLogedIn] = useState(true);
+
+	const [loggedUser, setLoggedUser] = useState([]);
 	const [data, setData] = useState([]);
 	const [addUserSlide, setAddUserSlide] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +51,10 @@ const AppProvider = ({ children }) => {
 				setAddUserSlide,
 				refetch,
 				setRefetch,
+				loggedUser,
+				setLoggedUser,
+				isLogedIn,
+				setIsLogedIn,
 			}}
 		>
 			{children}
