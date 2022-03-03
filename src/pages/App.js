@@ -17,7 +17,7 @@ import MyProfile from "./Profile/MyProfile";
 import SideBar from "../components/SideBar";
 
 function App() {
-	const [isLogedIn, setIsLogedIn] = useState(true);
+	const [isLogedIn, setIsLogedIn] = useState(false);
 
 	return (
 		<>
