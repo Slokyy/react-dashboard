@@ -46,6 +46,15 @@
 	align-self: start;
 }
 
+.edit-user-container .profile-picture,
+.edit-client-container .profile-picture {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
 .slide-form .delete-dev {
 	position: absolute;
 	right: 60px;

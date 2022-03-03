@@ -2,56 +2,43 @@ import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalState } from "../../../pages/context";
 import { useUserState } from "../../../pages/Users/UserContext";
-import "./AddUser.css";
+import "./User.css";
 
 const EditUser = () => {
 	const [editData, setEditData] = useState([]);
 	const [isPosting, setIsPosting] = useState(false);
-	const { activeEditUserId, editUserSlide, setEditUserSlide } = useUserState();
+	const { activeUserId, editUserSlide, setEditUserSlide } = useUserState();
+	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch(`http://localhost:8000/users/${activeEditUserId}`)
-			.then((res) => res.json())
-			.then((data) => {
-				setEditData(data);
-				console.log(data);
-			})
-			.catch((err) => console.log("EditFetchErr: ", err));
-	}, [activeEditUserId]);
+		if (activeUserId) {
+			fetch(`http://localhost:8000/users/${activeUserId}`)
+				.then((res) => res.json())
+				.then((data) => {
+					setEditData(data);
+				})
+				.catch((err) => console.log("EditFetchErr: ", err));
+		}
+	}, [activeUserId]);
 
 	const handleEditUserSubmit = (e) => {
 		e.preventDefault();
-		/* const user = {
-			// avatar,
-			// first_name,
-			// last_name,
-			// email,
-			// phone,
-			// street,
-			// city,
-			// ptt,
-			// country,
-			// status,
-			// password,
-			// role,
-			// tekuci_racun: tekRacun,
-		};
-
-		// console.log(user);
-		fetch("http://localhost:8000/users", {
-			method: "POST",
+		setIsPosting(true);
+		fetch(`http://localhost:8000/users/${activeUserId}`, {
+			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(user),
+			body: JSON.stringify(editData),
 		})
 			.then(() => setIsPosting(false))
 			.then(() => {
 				setTimeout(() => {
-					console.log("Posted");
-					navigate("/");
+					// console.log("Edited user");
+					// navigate("/");
+					setEditUserSlide(!editUserSlide);
 				}, 1000);
-			}); */
+			});
 	};
 	return (
 		<section
@@ -71,24 +58,26 @@ const EditUser = () => {
 				className="slide-form flex"
 				onSubmit={handleEditUserSubmit}
 			>
-				<h2>New User</h2>
+				<h2>Edit user: {editData?.first_name}</h2>
 
 				<div className="form-group flex">
-					<label className="label-image shadow-me flex" htmlFor="add-user-img">
-						Add image
-					</label>
 					<img
 						src={editData?.avatar?.image_path}
 						className="profile-picture"
 						alt="Loreta Ipsum"
 					></img>
-					{/* 					<input
+					<label
+						className="label-image shadow-me flex"
+						htmlFor="add-user-img"
+					></label>
+
+					<input
 						type="file"
 						name="add-user-img"
 						className="add-user-img"
 						id="add-user-img"
 						hidden
-					/> */}
+					/>
 				</div>
 				<div className="form-group">
 					<input
@@ -96,7 +85,7 @@ const EditUser = () => {
 						id="user-name"
 						className="shadow-me input-text-gray"
 						name="user-name"
-						value={editData?.first_name}
+						defaultValue={editData?.first_name}
 						onChange={(e) =>
 							setEditData({ ...editData, first_name: e.target.value })
 						}
@@ -113,7 +102,7 @@ const EditUser = () => {
 						id="user-lname"
 						name="user-lname"
 						className="shadow-me input-text-gray"
-						value={editData?.last_name}
+						defaultValue={editData?.last_name}
 						onChange={(e) =>
 							setEditData({ ...editData, last_name: e.target.value })
 						}
@@ -130,7 +119,7 @@ const EditUser = () => {
 						id="user-email"
 						className="shadow-me input-text-gray"
 						name="user-email"
-						value={editData?.email}
+						defaultValue={editData?.email}
 						onChange={(e) =>
 							setEditData({ ...editData, email: e.target.value })
 						}
@@ -147,7 +136,7 @@ const EditUser = () => {
 						id="user-phone"
 						className="shadow-me input-text-gray"
 						name="user-phone"
-						value={editData?.phone}
+						defaultValue={editData?.phone}
 						onChange={(e) =>
 							setEditData({ ...editData, phone: e.target.value })
 						}
@@ -164,7 +153,7 @@ const EditUser = () => {
 						id="user-street"
 						className="shadow-me input-text-gray"
 						name="user-street"
-						value={editData?.street}
+						defaultValue={editData?.street}
 						onChange={(e) =>
 							setEditData({ ...editData, street: e.target.value })
 						}
@@ -181,7 +170,7 @@ const EditUser = () => {
 						id="user-city"
 						className="shadow-me input-text-gray"
 						name="user-city"
-						value={editData?.city}
+						defaultValue={editData?.city}
 						onChange={(e) => setEditData({ ...editData, city: e.target.value })}
 						required
 					/>
@@ -196,7 +185,7 @@ const EditUser = () => {
 						id="user-ptt"
 						className="shadow-me input-text-gray"
 						name="user-ptt"
-						value={editData?.ptt}
+						defaultValue={editData?.ptt}
 						onChange={(e) => setEditData({ ...editData, ptt: e.target.value })}
 						required
 					/>
@@ -211,7 +200,7 @@ const EditUser = () => {
 						id="user-country"
 						className="shadow-me input-text-gray"
 						name="user-country"
-						value={editData?.country}
+						defaultValue={editData?.country}
 						onChange={(e) =>
 							setEditData({ ...editData, country: e.target.value })
 						}
@@ -228,7 +217,7 @@ const EditUser = () => {
 						id="user-status"
 						className="shadow-me input-text-gray"
 						name="user-status"
-						value={editData?.status}
+						defaultValue={editData?.status}
 						onChange={(e) =>
 							setEditData({ ...editData, status: e.target.value })
 						}
@@ -245,7 +234,7 @@ const EditUser = () => {
 						id="user-role"
 						className="shadow-me input-text-gray"
 						name="user-role"
-						value={editData?.role}
+						defaultValue={editData?.role}
 						onChange={(e) => setEditData({ ...editData, role: e.target.value })}
 						required
 					/>
@@ -260,7 +249,7 @@ const EditUser = () => {
 						id="user-tekuci-rac"
 						className="shadow-me input-text-gray"
 						name="user-tekuci-rac"
-						value={editData?.tekuci_racun}
+						defaultValue={editData?.tekuci_racun}
 						onChange={(e) =>
 							setEditData({ ...editData, tekuci_racun: e.target.value })
 						}
@@ -276,20 +265,20 @@ const EditUser = () => {
 						type="button"
 						className="btn js-btn-close shadow-me"
 						onClick={() => setEditUserSlide(!editUserSlide)}
-						value="Cancel"
+						defaultValue="Cancel"
 					/>
 					{!isPosting && (
 						<input
 							type="submit"
 							className="btn btn-small btn-blue shadow-me"
-							value="Edit user"
+							defaultValue="Edit user"
 						/>
 					)}
 					{isPosting && (
 						<input
 							type="submit"
 							className="btn btn-small btn-blue shadow-me"
-							value="Editing user..."
+							defaultValue="Editing user..."
 						/>
 					)}
 				</div>

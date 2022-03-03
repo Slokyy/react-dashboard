@@ -306,45 +306,26 @@
     },
     {
       "avatar": {
-        "image_path": "some_path",
+        "image_path": "./images/profile-images/julian-wan.jpg",
         "image_alt": "Some Image Alt"
       },
-      "first_name": "dsawd",
-      "last_name": "awdawd",
-      "email": "awdawd",
-      "phone": "awdawd",
-      "street": "awdawd",
-      "city": "awdawdawd",
-      "ptt": "awdawd",
-      "country": "awdawd",
+      "first_name": "David",
+      "last_name": "Letterman",
+      "email": "david@mail.com",
+      "phone": "98765421",
+      "street": "Baniska",
+      "city": "Novi Sad",
+      "ptt": "400108",
+      "country": "Serbia",
       "status": "Active",
       "password": "wadawd",
-      "role": "awdawdaw",
-      "tekuci_racun": "wadawda",
+      "role": "IT Admin",
+      "tekuci_racun": "98765432165498",
       "id": 17
     },
     {
       "avatar": {
-        "image_path": "some_path",
-        "image_alt": "Some Image Alt"
-      },
-      "first_name": "dsawd",
-      "last_name": "awdawd",
-      "email": "awdawd",
-      "phone": "awdawd",
-      "street": "awdawd",
-      "city": "awdawdawd",
-      "ptt": "awdawd",
-      "country": "awdawd",
-      "status": "Active",
-      "password": "wadawd",
-      "role": "awdawdaw",
-      "tekuci_racun": "wadawda",
-      "id": 18
-    },
-    {
-      "avatar": {
-        "image_path": "some_path",
+        "image_path": "./images/profile-images/julian-wan.jpg",
         "image_alt": "Some Image Alt"
       },
       "first_name": "Test",
@@ -363,7 +344,7 @@
     },
     {
       "avatar": {
-        "image_path": "some_path",
+        "image_path": "./images/profile-images/julian-wan.jpg",
         "image_alt": "Some Image Alt"
       },
       "first_name": "John",
@@ -382,22 +363,54 @@
     },
     {
       "avatar": {
-        "image_path": "some_path",
+        "image_path": "./images/profile-images/julian-wan.jpg",
         "image_alt": "Some Image Alt"
       },
-      "first_name": "Namestest",
-      "last_name": "lastname",
-      "email": "email@mail.com",
+      "first_name": "SomeEdit",
+      "last_name": "lastnameEdit",
+      "email": "edemail@mail.com",
       "phone": "0439059",
-      "street": "Street Name",
-      "city": "City Name",
-      "ptt": "09504",
-      "country": "Coutnry",
-      "status": "Active",
+      "street": "NYC Street",
+      "city": "New York Manhattan",
+      "ptt": "095042",
+      "country": "NY",
+      "status": "InActive",
       "password": "secret",
-      "role": "Developer",
-      "tekuci_racun": "4989438539053",
+      "role": "Developerred",
+      "tekuci_racun": "4989438539053ed",
       "id": 21
+    },
+    {
+      "first_name": "TEST3",
+      "last_name": "TEST3",
+      "email": "TEST3",
+      "phone": "TEST3",
+      "street": "TEST3",
+      "city": "TEST3",
+      "ptt": "TEST3",
+      "country": "TEST3",
+      "password": "TEST3",
+      "role": "TEST3",
+      "tekuci_racun": "TEST3",
+      "avatar": {
+        "image_path": "./images/profile-images/julian-wan.jpg",
+        "image_alt": "Some Image Alt"
+      },
+      "status": "Active",
+      "id": 22
+    },
+    {
+      "first_name": "TEST32",
+      "last_name": "TEST322",
+      "email": "TEST322",
+      "phone": "TEST3222",
+      "street": "TEST32",
+      "avatar": {
+        "image_path": "./images/profile-images/julian-wan.jpg",
+        "image_alt": "Some Image Alt"
+      },
+      "status": "Active",
+      "id": 23
     }
   ],
   "clients": [

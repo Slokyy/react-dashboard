@@ -86,8 +86,10 @@
 	gap: 25px;
 }
 
-.table-icon-group a {
+.table-icon-group button {
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	background: transparent;
+	border: none;
 }

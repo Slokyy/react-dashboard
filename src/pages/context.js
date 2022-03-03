@@ -33,17 +33,6 @@ const AppProvider = ({ children }) => {
 		setPathname(window.location.pathname.replace(/^\/|\/$/g, ""));
 	};
 
-	/* const useFetchID = (url, id, method) => {
-		
-		useEffect(() => {
-			fetch(url + id, {
-				method: method,
-			}).then(
-
-			)
-		}, [])
-	} */
-
 	return (
 		<AppContext.Provider
 			value={{

@@ -6,6 +6,7 @@ import SearchHeader from "../../components/Table/SearchHeader";
 import AddUser from "../../components/Sliders/User/AddUser";
 import Overlay from "../../components/Overlay";
 import EditUser from "../../components/Sliders/User/EditUser";
+import DeleteUser from "../../components/Modals/DeleteUser";
 
 const url = "http://localhost:8000/users";
 
@@ -30,6 +31,8 @@ const Users = () => {
 		handleLocationPath,
 		addUserSlide,
 		setAddUserSlide,
+		refetch,
+		setRefetch,
 	} = useGlobalState();
 
 	const keys = ["first_name", "last_name", "email"];
@@ -37,7 +40,7 @@ const Users = () => {
 	useEffect(() => {
 		handleLocationPath();
 		fetchUsers(url);
-	}, []);
+	}, [refetch]);
 
 	useEffect(() => {
 		console.log(searchQuery);
@@ -61,6 +64,7 @@ const Users = () => {
 				{data && <Table searchQuery={searchQuery} data={search(data)} />}
 				{data && <AddUser />}
 				{data && <EditUser />}
+				{data && <DeleteUser />}
 				{addUserSlide && <Overlay />}
 			</section>
 		</UserProvider>

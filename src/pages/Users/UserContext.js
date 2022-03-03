@@ -2,16 +2,24 @@ import React, { useContext, useState } from "react";
 const UserContext = React.createContext();
 
 const UserProvider = ({ children }) => {
-	const [activeEditUserId, setActiveEditUserId] = useState(1);
+	const [activeUserId, setActiveUserId] = useState(null);
 	// const [addUserSlide, setAddUserSlide] = useState(false);
+	const [tempData, setTempData] = useState([]);
+
 	const [editUserSlide, setEditUserSlide] = useState(false);
+	const [openUserDelete, setOpenUserDelete] = useState(false);
+
 	return (
 		<UserContext.Provider
 			value={{
-				activeEditUserId,
-				setActiveEditUserId,
+				activeUserId,
+				setActiveUserId,
 				editUserSlide,
 				setEditUserSlide,
+				openUserDelete,
+				setOpenUserDelete,
+				tempData,
+				setTempData,
 			}}
 		>
 			{children}

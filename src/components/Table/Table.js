@@ -6,16 +6,24 @@ import "./Table.css";
 const Table = ({ searchQuery, data }) => {
 	const { refetch, setRefetch } = useGlobalState();
 	const {
-		activeEditUserId,
-		setActiveEditUserId,
+		activeUserId,
+		setActiveUserId,
 		editUserSlide,
 		setEditUserSlide,
+		openUserDelete,
+		setOpenUserDelete,
 	} = useUserState();
 
 	const handleEditSlide = (id) => {
-		setActiveEditUserId(id);
+		setActiveUserId(id);
 		setRefetch(!refetch);
 		setEditUserSlide(!editUserSlide);
+	};
+
+	const handleDeleteModal = (id) => {
+		setOpenUserDelete(!openUserDelete);
+		setActiveUserId(id);
+		setRefetch(!refetch);
 	};
 	return (
 		<div className="table-section">
@@ -56,18 +64,21 @@ const Table = ({ searchQuery, data }) => {
 								<td>{user.email}</td>
 								<td>
 									<div className="table-icon-group flex">
-										<a onClick={(e) => e.preventDefault()}>
+										<button onClick={(e) => e.preventDefault()}>
 											<span
 												className="icon icon-sm icon-edit edit-user-toggle"
 												onClick={() => handleEditSlide(user.id)}
 											></span>
-										</a>
-										<a href="#!">
+										</button>
+										<button>
 											<span className="icon icon-sm icon-eye-hollow"></span>
-										</a>
-										<a href="#!">
-											<span className="icon icon-sm icon-trash open-delete-user"></span>
-										</a>
+										</button>
+										<button onClick={(e) => e.preventDefault()}>
+											<span
+												className="icon icon-sm icon-trash open-delete-user"
+												onClick={() => handleDeleteModal(user.id)}
+											></span>
+										</button>
 									</div>
 								</td>
 							</tr>
