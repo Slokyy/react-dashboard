@@ -1,0 +1,168 @@
+/* START: User/Dev profile */
+
+.section-profile {
+	grid-template-columns: 401px auto;
+	padding: 60px 0;
+	/* height: 94vh; */
+	height: 100%;
+}
+
+.profile-info {
+	flex-direction: column;
+	padding: 0 80px;
+	padding-bottom: 20px;
+	width: 100%;
+	border-right: 1px solid #bababa;
+	/* experimental part */
+	height: 100%;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+
+.profile-info .edit-button {
+	align-self: end;
+	height: 15px;
+	width: 15px;
+	margin-bottom: 25px;
+}
+
+.profile-group {
+	width: 100%;
+}
+
+.profile-group img {
+	width: 140px;
+	height: 140px;
+	margin-bottom: 30px;
+}
+
+.profile-group h2 {
+	margin: 0;
+	margin-bottom: 30px;
+}
+
+.profile-group h2 span {
+	display: block;
+}
+
+.profile-description {
+	width: 100%;
+}
+
+.profile-description p {
+	font-size: 14px;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.profile-group .form-group,
+.profile-group .form-group select {
+	font-size: 14px;
+	width: 100%;
+}
+
+.profile-group .form-group select {
+	color: #a2a2a2;
+	padding: 5px 10px;
+	background-color: #fff;
+	border: 0.4px solid #a2a2a2;
+	border-radius: 4px;
+	margin-bottom: 25px;
+}
+
+.profile-group .form-group input[type="number"],
+.timer-group .form-group input[type="number"] {
+	color: #a2a2a2;
+	padding: 5px 10px;
+	background-color: #fff;
+	border: 0.4px solid #a2a2a2;
+	border-radius: 4px;
+	width: 60px;
+	height: 30px;
+}
+
+.profile-group .form-group.grid {
+	grid-template-columns: repeat(3, auto);
+	align-items: center;
+	margin-bottom: 60px;
+}
+
+.submit-profile-btn {
+	margin-bottom: 30px;
+}
+
+/* Developer profile table  */
+
+.profile-table-area {
+	padding: 0 60px;
+}
+
+.table-wrapper {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 99%;
+	scrollbar-width: none;
+}
+
+/* Removing scrollbar */
+.profile-info::-webkit-scrollbar,
+.table-wrapper::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
+}
+
+.profile-info::-webkit-scrollbar-track,
+.table-wrapper::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.profile-info::-webkit-scrollbar-thumb,
+.table-wrapper::-webkit-scrollbar-thumb {
+	background: transparent;
+	border: unset;
+}
+
+.table-sm-blue {
+	display: block;
+	overflow-x: auto;
+	border-radius: 20px 20px 0 0;
+	width: 99.9%;
+	white-space: nowrap;
+	outline: none;
+	border: none;
+	z-index: 1;
+}
+
+.table-sm-blue thead tr {
+	color: #fff;
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: 700;
+}
+
+.table-sm-blue tbody tr {
+	font-size: 14px;
+	color: #505050;
+	z-index: 0;
+}
+
+.table-sm-blue tr:nth-child(even) {
+	background-color: rgba(96, 96, 96, 0.05);
+}
+
+.table-sm-blue tr:nth-child(odd) {
+	background-color: rgba(96, 96, 96, 0.01);
+}
+
+.table-sm-blue th {
+	position: static;
+	background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+}
+
+.table-sm-blue th,
+.table-sm-blue td {
+	text-align: left;
+	padding: 20px;
+}
+
+/* END: User/Dev profile */

@@ -43,8 +43,8 @@ const Users = () => {
 	}, [refetch]);
 
 	useEffect(() => {
-		console.log(searchQuery);
-	}, [searchQuery]);
+		handleLocationPath();
+	}, []);
 
 	const search = (data) => {
 		return data.filter((item) => {

@@ -15,27 +15,46 @@ import Developers from "./Developers/Developers";
 import Clients from "./Clients/Clients";
 import MyProfile from "./Profile/MyProfile";
 import SideBar from "../components/SideBar";
+import UserProfile from "./Profile/UserProfile";
 
 function App() {
-	const [isLogedIn, setIsLogedIn] = useState(false);
+	const [isCheckLogedIn, setIsCheckLogedIn] = useState(true);
 
 	return (
 		<>
 			<AppProvider>
-				{!isLogedIn && (
+				{!isCheckLogedIn && (
 					<Router>
 						<Routes>
+							<Route path="/" element={<Navigate replace to="/login" />} />
+							<Route path="/users" element={<Navigate replace to="/login" />} />
+							<Route
+								path="/developers"
+								element={<Navigate replace to="/login" />}
+							/>
+							<Route
+								path="/clients"
+								element={<Navigate replace to="/login" />}
+							/>
+							<Route
+								path="/my-profile"
+								element={<Navigate replace to="/login" />}
+							/>
+
 							<Route
 								path="/login"
 								element={
-									<Login isLogedIn={isLogedIn} setIsLogedIn={setIsLogedIn} />
+									<Login
+										isCheckLogedIn={isCheckLogedIn}
+										setIsCheckLogedIn={setIsCheckLogedIn}
+									/>
 								}
 							/>
 							<Route path="/reset-password" element={<ResetPassword />} />
 						</Routes>
 					</Router>
 				)}
-				{isLogedIn && (
+				{isCheckLogedIn && (
 					<Router>
 						<div className="main-container-wrapper grid">
 							<SideBar />
@@ -43,9 +62,18 @@ function App() {
 								<Routes>
 									<Route path="/" element={<Navigate replace to="/users" />} />
 									<Route path="/users" element={<Users />} />
+									<Route path="/users/user" element={<UserProfile />} />
 									<Route path="/developers" element={<Developers />} />
 									<Route path="/clients" element={<Clients />} />
-									<Route path="/my-profile" element={<MyProfile />} />
+									<Route
+										path="/my-profile"
+										element={
+											<MyProfile
+												isCheckLogedIn={isCheckLogedIn}
+												setIsCheckLogedIn={setIsCheckLogedIn}
+											/>
+										}
+									/>
 									<Route
 										path="/login"
 										element={<Navigate replace to="/users" />}

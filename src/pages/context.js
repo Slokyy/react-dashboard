@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-const AppContext = React.createContext();
+const AppContext = React.createContext(null);
 
 const AppProvider = ({ children }) => {
 	const [pathname, setPathname] = useState("");
@@ -31,6 +31,25 @@ const AppProvider = ({ children }) => {
 				setIsLoading(false);
 			});
 	};
+
+	useEffect(() => {
+		if (isLogedIn && localStorage.getItem("user")) {
+			let currentUser = JSON.parse(localStorage.getItem("user"));
+			fetch(`http://localhost:8000/users/${currentUser.id}`)
+				.then((res) => {
+					if (!res.ok) {
+						throw Error("OK: Bad Fetch Logged User", res.status);
+					}
+					return res.json();
+				})
+				.then((data) => {
+					setLoggedUser(data);
+				})
+				.catch((err) => {
+					console.log("Error fetching logged user: ", err);
+				});
+		}
+	}, [pathname]);
 
 	const handleLocationPath = () => {
 		setPathname(window.location.pathname.replace(/^\/|\/$/g, ""));
