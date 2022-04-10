@@ -20,25 +20,6 @@
       "phone": "0654215234"
     },
     {
-      "id": 2,
-      "avatar": {
-        "image_path": "./images/profile-images/profile-guy-one.png",
-        "image_alt": "Profile image of Waverly Rounds"
-      },
-      "first_name": "Waverly",
-      "last_name": "Rounds",
-      "email": "wrounds1@twitpic.com",
-      "street": "Dayton",
-      "city": "Banatski Dvor",
-      "country": "Serbia",
-      "password": "secret",
-      "role": "Research Nurse",
-      "status": "Active",
-      "tekuci_racun": "5108756529025907",
-      "ptt": "24000",
-      "phone": "0625741256"
-    },
-    {
       "id": 3,
       "avatar": {
         "image_path": "./images/profile-images/profile-guy-two.png",
@@ -366,8 +347,8 @@
         "image_path": "./images/profile-images/julian-wan.jpg",
         "image_alt": "Some Image Alt"
       },
-      "first_name": "SomeEdit",
-      "last_name": "lastnameEdit",
+      "first_name": "Marko",
+      "last_name": "Polo",
       "email": "edemail@mail.com",
       "phone": "0439059",
       "street": "NYC Street",
@@ -376,22 +357,22 @@
       "country": "NY",
       "status": "InActive",
       "password": "secret",
-      "role": "Developerred",
+      "role": "Developer",
       "tekuci_racun": "4989438539053ed",
       "id": 21
     },
     {
-      "first_name": "TEST3",
-      "last_name": "TEST3",
-      "email": "TEST3",
-      "phone": "TEST3",
-      "street": "TEST3",
-      "city": "TEST3",
-      "ptt": "TEST3",
-      "country": "TEST3",
-      "password": "TEST3",
-      "role": "TEST3",
-      "tekuci_racun": "TEST3",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "johndoe@macrohard.com",
+      "phone": "287538257857",
+      "street": "Woddington St",
+      "city": "Pasadena",
+      "ptt": "30942",
+      "country": "California",
+      "password": "sdoakwoda",
+      "role": "Senior Frontend Developer",
+      "tekuci_racun": "04953045903593",
       "avatar": {
         "image_path": "./images/profile-images/julian-wan.jpg",
         "image_alt": "Some Image Alt"
