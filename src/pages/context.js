@@ -3,13 +3,14 @@ const AppContext = React.createContext(null);
 
 const AppProvider = ({ children }) => {
 	const [pathname, setPathname] = useState("");
-	const [isLogedIn, setIsLogedIn] = useState(false);
+	const [isLogedIn, setIsLogedIn] = useState(true);
 
 	const [loggedUser, setLoggedUser] = useState([]);
 	const [data, setData] = useState([]);
 	const [addUserSlide, setAddUserSlide] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	const [refetch, setRefetch] = useState(false);
+
 	const fetchUsers = (url) => {
 		fetch(url, {
 			method: "GET",
