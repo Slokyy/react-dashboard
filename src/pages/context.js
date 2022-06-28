@@ -3,7 +3,7 @@ const AppContext = React.createContext(null);
 
 const AppProvider = ({ children }) => {
 	const [pathname, setPathname] = useState("");
-	const [isLogedIn, setIsLogedIn] = useState(true);
+	const [isLogedIn, setIsLogedIn] = useState(false);
 
 	const [loggedUser, setLoggedUser] = useState([]);
 	const [data, setData] = useState([]);

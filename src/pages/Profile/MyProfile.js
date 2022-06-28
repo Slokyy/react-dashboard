@@ -21,7 +21,7 @@ const MyProfile = ({ isCheckLogedIn, setIsCheckLogedIn }) => {
 	};
 
 	if (isCheckLogedIn) {
-		handleLocationPath();
+		// handleLocationPath();
 		// console.log(pathname);
 		console.log("true");
 	} else {

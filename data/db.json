@@ -362,25 +362,6 @@
       "id": 20
     },
     {
-      "avatar": {
-        "image_path": "./images/profile-images/julian-wan.jpg",
-        "image_alt": "Some Image Alt"
-      },
-      "first_name": "SomeEdit",
-      "last_name": "lastnameEdit",
-      "email": "edemail@mail.com",
-      "phone": "0439059",
-      "street": "NYC Street",
-      "city": "New York Manhattan",
-      "ptt": "095042",
-      "country": "NY",
-      "status": "InActive",
-      "password": "secret",
-      "role": "Developerred",
-      "tekuci_racun": "4989438539053ed",
-      "id": 21
-    },
-    {
       "first_name": "TEST3",
       "last_name": "TEST3",
       "email": "TEST3",

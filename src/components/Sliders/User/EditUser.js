@@ -8,6 +8,8 @@ const EditUser = () => {
 	const [editData, setEditData] = useState([]);
 	const [isPosting, setIsPosting] = useState(false);
 	const { activeUserId, editUserSlide, setEditUserSlide } = useUserState();
+
+	const { refetch, setRefetch } = useGlobalState();
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -37,6 +39,7 @@ const EditUser = () => {
 					// console.log("Edited user");
 					// navigate("/");
 					setEditUserSlide(!editUserSlide);
+					setRefetch(!refetch);
 				}, 1000);
 			});
 	};

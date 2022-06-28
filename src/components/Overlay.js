@@ -10,7 +10,7 @@ const Overlay = () => {
 		activeUserId,
 		setActiveUserId,
 		setOpenUserDelete,
-	} = useUserState;
+	} = useUserState();
 
 	const handleUserOverlay = () => {
 		setAddUserSlide(false);
